@@ -1,0 +1,34 @@
+{
+    "_id": "915cc8ab5fbbb6f50034354a4d9a4a77",
+    "title": "美团",
+    "icon": "cloud://cloud1-7gff63ayf073f5b9.636c-cloud1-7gff63ayf073f5b9-1305859706/icon/meituan.png",
+    "coupon": [
+        {
+            "name": "外卖重磅红包",
+            "icon": "cloud://cloud1-7gff63ayf073f5b9.636c-cloud1-7gff63ayf073f5b9-1305859706/coupon-banner/meituan.png",
+            "bannerPic": "cloud://cloud1-7gff63ayf073f5b9.636c-cloud1-7gff63ayf073f5b9-1305859706/coupon-banner/meituan_banner.png",
+            "type": 1,
+            "minapp": {
+                "appid": "wxde8ac0a21135c07d",
+                "path": "http://dpurl.cn/xuwndGsz"
+            }
+        }
+    ]
+}
+{
+    "_id": "fc5ac5c95fbd0bf9003d301f646b7191",
+    "title": "饿了么",
+    "icon": "cloud://cloud1-7gff63ayf073f5b9.636c-cloud1-7gff63ayf073f5b9-1305859706/icon/ele.png",
+    "coupon": [
+        {
+            "bannerPic": "cloud://cloud1-7gff63ayf073f5b9.636c-cloud1-7gff63ayf073f5b9-1305859706/coupon-banner/ele_banner.png",
+            "icon": "cloud://cloud1-7gff63ayf073f5b9.636c-cloud1-7gff63ayf073f5b9-1305859706/coupon-banner/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/atlUttu"
+            },
+            "name": "饿了么霸王餐",
+            "type": 1.0
+        }
+    ]
+}
