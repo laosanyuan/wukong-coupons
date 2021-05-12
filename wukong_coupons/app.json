@@ -5,9 +5,9 @@
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "悟空领券",
-    "navigationBarBackgroundColor": "#0bb9b6",
-    "backgroundColor": "#FFFFFF",
-    "titleView": false
+    "navigationBarBackgroundColor": "#1e90ff",
+    "backgroundColor": "#ffffff",
+    "titleView": true
   },
   "sitemapLocation": "sitemap.json"
 }

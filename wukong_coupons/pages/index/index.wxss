@@ -17,10 +17,6 @@ page {
   z-index: 9999;
 }
 
-.container .coupon {
-  /* padding-top: 200rpx; */
-}
-
 .container .coupon .item {
   background-color: #ffffff;
   margin: 30rpx;
