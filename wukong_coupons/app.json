@@ -1,13 +1,34 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/game/index"
   ],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "悟空领券",
+    "navigationBarTitleText": "认真吃外卖",
     "navigationBarBackgroundColor": "#1e90ff",
     "backgroundColor": "#ffffff",
     "titleView": true
+  },
+  "tabBar": {
+    "backgroundColor": "#DDD",
+    "color": "#333333",
+    "borderStyle": "white",
+    "selectedColor": "#7fb6e7",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "优惠红包",
+        "iconPath": "images/bar-icon/home.png",
+        "selectedIconPath": "images/bar-icon/home1.png"
+      },
+      {
+        "pagePath": "pages/game/index",
+        "text": "今天吃什么",
+        "iconPath": "images/bar-icon/account.png",
+        "selectedIconPath": "images/bar-icon/account1.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

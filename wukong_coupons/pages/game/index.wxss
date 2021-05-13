@@ -1,0 +1,30 @@
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+.suiji{
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  font-size:x-large;
+}
+.sty{
+  font-weight: 600;
+  color: #3bae56;
+}
+.temp{
+	position: absolute;
+	z-index: -1;
+	color: #777;
+}
+.an{
+   margin-top: 200px;
+   background-color: #3bae56;
+   width: 200px;
+   color: white;
+}
