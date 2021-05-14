@@ -75,7 +75,7 @@ Page({
         sty: s
       })
       that.startn(content);
-    }, 20)
+    }, 40)
   },
   // 自定义的暂停按钮  
   endBtn: function () {
