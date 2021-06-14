@@ -94,7 +94,12 @@ page {
   height: auto;
 }
 
-
+.sty{
+  font-weight: 800;
+  color: #3bae56;
+  text-align: center;
+  line-height: 20;
+}
 
 .loading {
     text-align: center;

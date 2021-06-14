@@ -6,13 +6,22 @@ Page({
     data: {
         tabs: [],
         activeTab: 0,
-        notice: ''
+        notice: '',
+        isVerify: true
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
+        // 是否审核中
+        let verify_data = Bmob.Object.extend("verify");
+        let verify_query = new Bmob.Query(verify_data);
+        await verify_query.first({
+            success:result =>{
+                this.setData({isVerify:result.get("is_verify")});
+            }
+        })
         // 优惠券信息
         const tabs =[];
         let coupon_data = Bmob.Object.extend("coupon_type");

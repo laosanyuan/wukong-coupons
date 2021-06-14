@@ -1,6 +1,5 @@
 //index.js
 const my_util = require('../../utils/my_util.js')
-var Bmob = require('../../utils/bmob.js');
 
 var end; 
 var ssd;
