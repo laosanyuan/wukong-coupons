@@ -16,6 +16,10 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function floor(num,n){
+  return parseInt(num*Math.pow(10,n))/Math.pow(10,n) 
+}
+
 module.exports = {
   formatTime: formatTime
 }

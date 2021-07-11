@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/game/index"
+    "pages/game/index",
+    "pages/recommend/recommend"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -21,6 +22,12 @@
         "text": "优惠红包",
         "iconPath": "images/bar-icon/home.png",
         "selectedIconPath": "images/bar-icon/home1.png"
+      },
+      {
+        "pagePath": "pages/recommend/recommend",
+        "text": "每日秒杀",
+        "iconPath": "images/bar-icon/home.png",
+        "selectedIconPath":"images/bar-icon/home1.png"
       },
       {
         "pagePath": "pages/game/index",

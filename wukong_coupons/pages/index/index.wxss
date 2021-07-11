@@ -1,7 +1,7 @@
 
 /* 样式 */
 page {
-  background-color: #f8f8f8;
+  background-color: #f0f0f0;
 }
 
 .container {
@@ -19,7 +19,7 @@ page {
 
 .container .coupon .item {
   background-color: #ffffff;
-  margin: 30rpx;
+  margin: 15rpx;
   border-radius: 10rpx;
   padding: 0 30rpx 30rpx 30rpx;
 }
