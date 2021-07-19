@@ -94,7 +94,7 @@ Page({
 
     toCoupon(e) {
         const couponIdx = e.currentTarget.dataset.index;
-
+            console.log(this.data.tabs[this.data.activeTab].coupon[couponIdx].appPath);
         wx.navigateToMiniProgram({
             appId: this.data.tabs[this.data.activeTab].coupon[couponIdx].appid,
             path: this.data.tabs[this.data.activeTab].coupon[couponIdx].appPath,

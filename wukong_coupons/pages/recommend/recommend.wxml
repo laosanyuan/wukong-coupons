@@ -6,25 +6,22 @@
 </wxs>
 <view class="goods-card" wx:for="{{couponList}}" wx:key="{{index}}">
   <view class="item">
-    <view class="icon" bindtap="setCouponInfo">
-      <image class="image" src="{{item.imgUrl}}" mode="aspectFit"></image>
+    <view class="icon">
+      <image class="image" src="{{item.pict_url}}" mode="aspectFit"></image>
     </view>
     <view class="detail">
-      <view class="title">{{item.productName}}</view>
+      <view class="title">{{item.title}}</view>
       <view class="data">
         <view class="price">
           <view class="flag">券后价</view>
-          <view>￥{{item.mobliePrice}}</view>
-          <view class="platform">{{item.mallName}}</view>
+          <view>￥{{item.zk_final_price}}</view>
         </view>
-        <view class="zan-card__detail-row">现价￥{{item.mobilePriceOri}} 月销量{{item.monthSaleCount}}</view>
+        <view class="zan-card__detail-row">原价￥{{item.reserve_price}}  月销量{{item.volume}}</view>
       </view>
     </view>
     <view class="line"></view>
-    <view class="coupon" bindtap="setCouponInfo">
-      <view class="coupon-price">￥{{m1.numberToFix(item.mobilePriceOri - item.mobliePrice)}}</view>
-      <view class="text">优惠券</view>
-      <view class="coupon-detail">查看详情</view>
+    <view class="coupon">
+      <button class="text" data-item="{{item.item_id}}" bindtap="setCouponInfo">立即领取</button>
     </view>
   </view>
 </view>

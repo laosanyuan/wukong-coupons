@@ -90,7 +90,13 @@ page{
   font-size: 20px;
 }
 .goods-card .item .coupon .text{
-  margin: 10rpx;
+  margin-top: 50px;
+  justify-content: center;
+  background-color: #3bae56;
+  width: 80px;
+  margin: 20rpx;
+  color: white;
+  font-size: 24rpx;
 }
 .goods-card .item .coupon .coupon-detail{
   color: red;

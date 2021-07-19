@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    couponList:[],
-    showResult:true
+    couponList: [],
+    showResult: true
   },
 
   /**
@@ -15,28 +15,22 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://o.yiqifa.com/servlet/interface?method=yiqifa.product.nonelink.list.get',
-      data:{
-        'app_key':'G07CO2S2R7',
-        'app_secret':'106d211c9ed35054d4f3',
-        'path':1,
-        'isPostFree':1,
-        'status':0,
-        'IsCoupon':1,
-        'encoding':'UTF-8',
-        'mobilePrice':'0,10.0'
+      url: 'https://api.taobaokeapi.com/?usertoken=4e0f27c029798bd3028ee0e560bedce3&method=taobao.tbk.sc.material.optional',
+      data: {
+        'page_size': 50,
+        'adzone_id': 109751050236,
+        'site_id': 1078400483,
+        'q': '超值',
+        'has_coupon': true,
+        'need_free_shipment': true,
+        'end_price': 10.0,
+        'start_price': 5.0
       },
-      success:function(e){
-        console.log(e);
-      },
-      fail:function(e){
-        console.log(e);
-      },
-      complete:function(res){
+      success: function (res) {
         console.log(res);
-        that.setData({couponList:res.data.result.data});
+        that.setData({ couponList: res.data.result_list.map_data });
       }
-    })
+    });
   },
 
   /**
@@ -88,7 +82,34 @@ Page({
 
   },
 
-  setCouponInfo: function(){
-
+  // 复制淘口令
+  setCouponInfo: function (event) {
+    console.log(event);
+    var item_id = event.target.dataset.item;
+    // 获取淘口令
+    wx.request({
+      url: 'https://api.taobaokeapi.com/?usertoken=4e0f27c029798bd3028ee0e560bedce3&method=api.taobao.id2tkl',
+      data: {
+        'adzone_id': 109751050236,
+        'site_id': 1078400483,
+        'item_id': item_id,
+      },
+      success: function (res) {
+        console.log(res);
+        wx.setClipboardData({
+          data: res.data.result.data.mode,
+          success: function (e) {
+            wx.hideToast();
+            wx.showModal({
+              title: '温馨提示',
+              content: '淘口令已复制，打开对应App会自动跳转到领券地址',
+              showCancel: false,
+              confirmText: "确定",
+              confirmColor: "#576B95"
+            })
+          }
+        })
+      }
+    })
   }
 })

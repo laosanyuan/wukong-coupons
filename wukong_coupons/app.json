@@ -25,15 +25,15 @@
       },
       {
         "pagePath": "pages/recommend/recommend",
-        "text": "每日秒杀",
-        "iconPath": "images/bar-icon/home.png",
-        "selectedIconPath":"images/bar-icon/home1.png"
+        "text": "淘宝特卖",
+        "iconPath": "images/bar-icon/miaosha.png",
+        "selectedIconPath":"images/bar-icon/miaosha1.png"
       },
       {
         "pagePath": "pages/game/index",
         "text": "今天吃什么",
-        "iconPath": "images/bar-icon/account.png",
-        "selectedIconPath": "images/bar-icon/account1.png"
+        "iconPath": "images/bar-icon/food.png",
+        "selectedIconPath": "images/bar-icon/food1.png"
       }
     ]
   },
