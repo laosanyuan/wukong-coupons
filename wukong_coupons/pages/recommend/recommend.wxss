@@ -99,5 +99,7 @@ page{
   font-size: 24rpx;
 }
 .goods-card .item .coupon .coupon-detail{
-  color: red;
+  color: #ec6f43;
+  font-size: 50rpx;
+  font-weight: 600;
 }

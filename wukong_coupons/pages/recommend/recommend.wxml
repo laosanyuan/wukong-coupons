@@ -5,7 +5,7 @@
   module.exports.numberToFix = numberToFix;
 </wxs>
 <view class="goods-card" wx:for="{{couponList}}" wx:key="{{index}}">
-  <view class="item">
+  <view class="item" wx:if="{{item.coupon_amount>=9}}">
     <view class="icon">
       <image class="image" src="{{item.pict_url}}" mode="aspectFit"></image>
     </view>
@@ -14,14 +14,15 @@
       <view class="data">
         <view class="price">
           <view class="flag">券后价</view>
-          <view>￥{{item.zk_final_price}}</view>
+          <view>￥{{m1.numberToFix(item.zk_final_price - item.coupon_amount)}}</view>
         </view>
-        <view class="zan-card__detail-row">原价￥{{item.reserve_price}}  月销量{{item.volume}}</view>
+        <view class="zan-card__detail-row">原价￥{{item.zk_final_price}} 月销量{{item.volume}}</view>
       </view>
     </view>
     <view class="line"></view>
     <view class="coupon">
-      <button class="text" data-item="{{item.item_id}}" bindtap="setCouponInfo">立即领取</button>
+      <view class="coupon-detail">￥{{item.coupon_amount}}</view>
+      <button class="text" data-item="{{item.item_id}}" bindtap="get_taobao_command">立即领取</button>
     </view>
   </view>
 </view>
