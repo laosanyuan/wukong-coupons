@@ -1,4 +1,5 @@
 // pages/recommend/recommend.wxml.js
+var Bmob = require('../../utils/bmob.js');
 Page({
 
   /**
@@ -7,50 +8,24 @@ Page({
   data: {
     couponList: [],
     showResult: true,
-    page_no: 1
+    page_no: 1,
+    isVerify: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
+    // 是否审核中
+    let verify_data = Bmob.Object.extend("verify");
+    let verify_query = new Bmob.Query(verify_data);
+    await verify_query.first({
+      success: result => {
+        this.setData({ isVerify: result.get("is_verify") });
+      }
+    });
     var that = this;
     that.get_goods_list();
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
   },
 
   /**
@@ -69,9 +44,12 @@ Page({
   },
 
   // 获取特卖商品列表
-  get_goods_list: function () {
+  get_goods_list: async function () {
     var that = this;
-    wx.request({
+    wx.showLoading({
+      title: '特卖收集中',
+    });
+    await wx.request({
       url: 'https://api.taobaokeapi.com/?usertoken=4e0f27c029798bd3028ee0e560bedce3&method=taobao.tbk.sc.material.optional',
       data: {
         'page_size': 100,
@@ -88,9 +66,11 @@ Page({
         'include_pay_rate_30': true
       },
       success: function (res) {
-        console.log(res);
-          that.setData({ couponList: that.data.couponList.concat(res.data.result_list.map_data) });
+        that.setData({ couponList: that.data.couponList.concat(res.data.result_list.map_data) });
         that.data.page_no++;
+      },
+      complete: function () {
+        wx.hideLoading();
       }
     });
   },

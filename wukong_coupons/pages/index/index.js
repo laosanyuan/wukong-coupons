@@ -6,22 +6,13 @@ Page({
     data: {
         tabs: [],
         activeTab: 0,
-        notice: '',
-        isVerify: true
+        notice: ''
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
-        // 是否审核中
-        let verify_data = Bmob.Object.extend("verify");
-        let verify_query = new Bmob.Query(verify_data);
-        await verify_query.first({
-            success:result =>{
-                this.setData({isVerify:result.get("is_verify")});
-            }
-        })
         // 优惠券信息
         const tabs =[];
         let coupon_data = Bmob.Object.extend("coupon_type");
@@ -92,6 +83,7 @@ Page({
         this.setData({ activeTab: parseInt(index) })
     },
 
+    // 跳转到小程序
     toCoupon(e) {
         const couponIdx = e.currentTarget.dataset.index;
             console.log(this.data.tabs[this.data.activeTab].coupon[couponIdx].appPath);
@@ -103,48 +95,6 @@ Page({
                 console.log('打开成功', res);
             }
         })
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
     },
 
     /**
