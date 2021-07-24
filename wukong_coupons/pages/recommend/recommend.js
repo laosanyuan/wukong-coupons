@@ -1,5 +1,6 @@
 // pages/recommend/recommend.wxml.js
 var Bmob = require('../../utils/bmob.js');
+var app = getApp();
 Page({
 
   /**
@@ -9,23 +10,28 @@ Page({
     couponList: [],
     showResult: true,
     page_no: 1,
-    isVerify: true
+    isVerify: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-    // 是否审核中
-    let verify_data = Bmob.Object.extend("verify");
-    let verify_query = new Bmob.Query(verify_data);
-    await verify_query.first({
-      success: result => {
-        this.setData({ isVerify: result.get("is_verify") });
-      }
-    });
+  onLoad: function (options) {
     var that = this;
-    that.get_goods_list();
+    if (app.globalData.isInited) {
+      this.setData({ isVerify: app.globalData.isVerify });
+      if (!that.data.isVerify) {
+        that.get_goods_list();
+      }
+    } else {
+      app.initedCallBack = verify => {
+        this.setData({ isVerify: app.globalData.isVerify });
+        if (!verify) {
+          that.get_goods_list();
+        }
+      }
+    }
+
   },
 
   /**
@@ -99,10 +105,10 @@ Page({
               showCancel: false,
               confirmText: "确定",
               confirmColor: "#576B95"
-            })
+            });
           }
-        })
+        });
       }
-    })
+    });
   }
 })

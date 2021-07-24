@@ -25,7 +25,7 @@
       },
       {
         "pagePath": "pages/recommend/recommend",
-        "text": "淘宝特卖",
+        "text": "秒杀",
         "iconPath": "images/bar-icon/miaosha.png",
         "selectedIconPath":"images/bar-icon/miaosha1.png"
       },

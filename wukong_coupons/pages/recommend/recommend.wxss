@@ -103,3 +103,9 @@ page{
   font-size: 50rpx;
   font-weight: 600;
 }
+.sty{
+  font-weight: 800;
+  color: #3bae56;
+  text-align: center;
+  line-height: 20;
+}

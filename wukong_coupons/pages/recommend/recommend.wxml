@@ -1,7 +1,7 @@
 <wxs module="m1">
   var numberToFix = function (value) {
     return value.toFixed(2)
-  }
+  };
   module.exports.numberToFix = numberToFix;
 </wxs>
 <view wx:if="{{isVerify == false}}">
@@ -27,4 +27,7 @@
       </view>
     </view>
   </view>
+</view>
+<view wx:else>
+  <view class="sty">今天吃点啥！</view>
 </view>
