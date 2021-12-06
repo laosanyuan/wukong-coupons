@@ -1,0 +1,69 @@
+<wxs module="m1">
+  var getDisplayStr = function (value) {
+    if(value==2){
+      return "香菜";
+    }else if(value==4){
+      return "豆芽";
+    }else if(value==8){
+      return "香菇";
+    }else if(value==16){
+      return "春笋";
+    }else if(value==32){
+      return "鱼丸";
+    }else if(value==64){
+      return "扇贝";
+    }else if(value==128){
+      return "里脊";
+    }else if(value==256){
+      return "毛肚";
+    }else if(value==512){
+      return "虾滑";
+    }else if(value==1024){
+      return "肥牛";
+    }else if(value==2048){
+      return "羊肉卷";
+    }else if(value==4096){
+      return "锅"
+    }
+    return "";
+  };
+  module.exports.getDisplayStr = getDisplayStr;
+</wxs>
+
+<!--pages/2048/2048.wxml-->
+<view class='container'> 
+  <!-- loading -->
+  <loading hidden="{{hidden}}">
+    加载中...
+  </loading>
+
+  <view class='head'>
+    <view class='lside'>
+      <text class='title'>吃火锅</text>
+      <text class='play' bindtap='gameStart'>{{start}}</text>
+    </view>
+    <view class='rside'>
+      <text>食材 <text class='score'>{{m1.getDisplayStr(score)}}</text></text>
+    </view>
+  </view>
+
+  <view class="game"> 
+    <!-- 矩阵 -->
+    <view bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+      <view class='row' wx:for="{{num}}" wx:for-item="row" wx:key="key" >
+        <view class='cell' wx:for="{{row}}" wx:for-item="cell" wx:key="key">
+          <view class='cell-con cell-con-{{cell}}'>
+            {{m1.getDisplayStr(cell)}}
+          </view>
+        </view>
+      </view> 
+    </view>
+
+    <!-- game over -->
+    <view class='game-over' hidden='{{!over}}'>
+      <text class='nowScore'>历史最高级食材：{{bestScore}}</text>
+      <text class='nowScore'>本次获取食材：{{score}}</text>
+      <text class='pro'>{{endMsg}}</text> 
+    </view> 
+  </view>
+</view>
