@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/game/index",
-    "pages/recommend/recommend"
+    "pages/2048/2048"
   ],
   "window": {
     "navigationBarTextStyle": "white",
@@ -24,8 +24,8 @@
         "selectedIconPath": "images/bar-icon/home1.png"
       },
       {
-        "pagePath": "pages/recommend/recommend",
-        "text": "秒杀",
+        "pagePath": "pages/2048/2048",
+        "text": "吃火锅",
         "iconPath": "images/bar-icon/miaosha.png",
         "selectedIconPath":"images/bar-icon/miaosha1.png"
       },
